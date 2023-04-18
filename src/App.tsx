@@ -1,20 +1,26 @@
-
-import { PaperContainer } from "./components/PaperContainer";
-import { Container, CssBaseline, Stack } from '@mui/material'
 import './App.css';
-import { NavigationBar } from "./components/NavigationBar";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import RootLayout from "./page/Root";
+import HomePage from "./page/Home";
+import CoursesPage from "./page/Courses";
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: 'courses',
+        element: <CoursesPage />
+      }
+    ]
+  }
+])
+
 
 function App() {
-  return (
-    <Stack>
-      <CssBaseline />
-      <Container maxWidth="xl">
-        <NavigationBar />
-        <PaperContainer />
-      </Container>
-    </Stack>
-
-  );
+  return <RouterProvider router={ router } />;
 }
 
 export default App;

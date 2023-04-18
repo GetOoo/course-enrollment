@@ -3,20 +3,18 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useState } from 'react';
 import { SubscribedDialog } from './SubscribedDialog';
 
-
+const DUMMY_DATA = [
+  { name: 'excel', price: 159 },
+  { name: 'java', price: 237 },
+]
 
 export const NavigationBar = () => {
-  const data = [
-    {name: 'excel', price: 159},
-    {name: 'java', price: 237},
-  ];
   const [open, setOpen] = useState(false);
-
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={ { flexGrow: 1 } }>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={ { flexGrow: 1 } }>
             Course Enrollment
           </Typography>
           <IconButton
@@ -24,14 +22,14 @@ export const NavigationBar = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={() => setOpen(true)}
+            sx={ { mr: 2 } }
+            onClick={ () => setOpen(true) }
           >
             <ShoppingCartIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
-      <SubscribedDialog onClose={() => setOpen(false)} open={open} data={data} />
+      <SubscribedDialog onClose={ () => setOpen(false) } open={ open } data={ DUMMY_DATA } />
     </Box>
   )
 }

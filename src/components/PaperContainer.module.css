@@ -1,0 +1,6 @@
+.Box {
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+  align-items: center;
+} 

@@ -1,20 +1,13 @@
 import { Box, Paper } from '@mui/material'
 import { CourseCard } from './CourseCard'
 import { PageNum } from './PageNum'
+import classes from './PaperContainer.module.css'
 
 export const PaperContainer = () => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '80vh',
-        backgroundColor: 'yellowgreen',
-        alignItems: 'center'
-      }}
-    >
-      <Paper 
-        sx={{
+    <Box className={ classes.Box }>
+      <Paper
+        sx={ {
           display: 'flex',
           justifyContent: 'center',
           marginTop: '5vh',
@@ -22,10 +15,9 @@ export const PaperContainer = () => {
           width: '0.9',
           height: '0.8',
           borderRadius: '30px',
-        }}
-        elevation={20} 
+        } }
+        elevation={ 20 }
       >
-        
         <CourseCard />
       </Paper>
       <PageNum />

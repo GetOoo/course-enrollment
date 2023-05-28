@@ -1,0 +1,12 @@
+.Box {
+  margin: 0.5em;
+  width: 14em;
+}
+
+.Avatar {
+  background-color: yellow;
+  height: 2.5em;
+  width: 2.5em;
+  left: 0.5em;
+  z-index: 1;
+}
